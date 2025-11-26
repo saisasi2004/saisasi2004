@@ -10,19 +10,20 @@
   <!--
     - favicon
   -->
-  <link rel="shortcut icon" href="./assets/images/logo.ico" type="image/x-icon">
+  <link rel="shortcut icon" href="./assets/images/logo.svg" type="image/x-icon">
 
   <!--
     - custom css link
   -->
   <link rel="stylesheet" href="./assets/css/style.css">
+  <link rel="stylesheet" href="./assets/css/robotic-theme.css">
 
   <!--
     - google font link
   -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;500;600;700&family=Rajdhani:wght@300;400;500;600;700&family=Fira+Code:wght@300;400;500&display=swap" rel="stylesheet">
 </head>
 
 <body>
@@ -50,12 +51,12 @@
         </figure>
 
         <div class="info-content">
-          <h1 class="name" title="Sai Sasivardhan">Sai Sasivardhan</h1>
+          <h1 class="name" title="Sai Sasivardhan">Sai Sasivardhan <span class="online-badge"></span></h1>
 
           <p class="title">Robotics Engineer</p>
 
-          <a href="Robotics_Resume.pdf" download="Resume.pdf">
-          <button class="sasi-resume">Download Resume</button>
+          <a href="Robotics_Resume.pdf" target="_blank">
+          <button class="sasi-resume">[VIEW_DATA_RESUME]</button>
           </a>          
         </div>
 
@@ -80,7 +81,7 @@
             </div>
 
             <div class="contact-info">
-              <p class="contact-title">Email</p>
+              <p class="contact-title">EMAIL</p>
 
               <a href="mailto:gampassv2004@gmail.com" class="contact-link">gampassv2004@gmail.com</a>
             </div>
@@ -94,7 +95,7 @@
             </div>
 
             <div class="contact-info">
-              <p class="contact-title">Phone</p>
+              <p class="contact-title">PHONE</p>
 
               <a href="tel:+91-7661991859" class="contact-link">+91-7661991859</a>
             </div>
@@ -108,7 +109,7 @@
             </div>
 
             <div class="contact-info">
-              <p class="contact-title">Birthday</p>
+              <p class="contact-title">BIRTH_DATE</p>
 
               <time datetime="2004-11-20">November 20, 2004</time>
             </div>
@@ -122,7 +123,7 @@
             </div>
 
             <div class="contact-info">
-              <p class="contact-title">Location</p>
+              <p class="contact-title">LOCATION</p>
 
               <address>Hyderabad, Telengana, India</address>
             </div>
@@ -142,7 +143,7 @@
           </li>
 
           <li class="social-item">
-            <a href="https://www.instagram.com/sasivardhansai?igsh=NWd6eTl5cWt1dW1t" class="social-link">
+            <a href="https://www.instagram.com/sasivardhansai" class="social-link">
               <ion-icon name="logo-instagram"></ion-icon>
             </a>
           </li>
@@ -212,20 +213,17 @@
       <article class="about  active" data-page="about">
 
         <header>
-          <h2 class="h2 article-title">About me</h2>
-        </header>
+        <span class="system-label">// ABOUT_OPERATOR</span>
+        <h2 class="h2 article-title">About me</h2>
+      </header>
 
         <section class="about-text">
           <p>
-            I am a <b>Robotics Engineer</b> currently pursuing my third year of B.Tech at the prestigious National Institute of Technology, Warangal.
-            With a strong foundation in both Electronic and Communication and Chemical Engineering, I specialize in Robotics, Electronics, ROS2, IoT and Mechanical Design.
+            I am a <b>Robotics Engineer</b> bridging the gap between hardware and intelligence. Currently pursuing a Dual Degree (B.Tech ECE Minor & Chemical Engineering) at NIT Warangal, I specialize in <b>Robotics</b>, <b>Electronics</b>, <b>Computer Vision</b>, <b>ROS2</b>, <b>IoT</b> and <b>Mechanical Design</b>.
           </p>
 
           <p>
-            My job is to build advanced robotic systems that are efficient and user-friendly while ensuring they are highly functional. 
-            Moreover, I add a personal touch to each project, making sure it is innovative and effective. 
-            My aim is to solve complex problems and bring across your vision in the most technically proficient way. 
-            I have developed robotic solutions for various challenging applications, ensuring top-notch performance and reliability.
+            My mission is to architect advanced robotic systems that integrate seamless mechanical design with high-level cognitive processing. From developing autonomous navigation algorithms to designing precision-engineered manipulators, I focus on building robust, efficient, and intelligent machines.
           </p>
         </section>
 
@@ -467,17 +465,18 @@
 -->
 
 <section class="experience">
-  <h3 class="h3 experience-title">Experience</h3>
+  <span class="system-label">// MISSION_LOGS</span>
+  <h3 class="h3 experience-title">Work Experience</h3>
   <ul class="experience-list has-scrollbar">
     <li class="experience-item">
       <a href="#">
         <div class="experience-content-box">
           <div class="experience-logo-wrapper">
-            <img class="experience-logo-box" src="./assets/images/eternal_robotics_logo.jpg" alt="Mowito logo" width="60">
+            <img class="experience-logo-box" src="./assets/images/eternal_robotics_logo.jpg" alt="Eternal Robotics" width="60">
           </div>
           <h4 class="h4 experience-item-title"><b>Eternal Robotics</b></h4>
           <p class="experience-item-text">
-            Interned at Eternal Robotics where I built a 95% accurate OCR pipeline for industrial labels and developed a custom GUI tool that significantly improved image correction and automation efficiency by 40%.
+            Built an automated OCR pipeline achieving <b>95% accuracy</b> for industrial labels. Developed a custom GUI tool that reduced image preprocessing time by <b>0.22s/image</b>, significantly boosting pipeline throughput.
           </p>
         </div>
       </a>
@@ -486,11 +485,11 @@
       <a href="#">
         <div class="experience-content-box">
           <div class="experience-logo-wrapper">
-            <img class="experience-logo-box" src="./assets/images/mowito_logo.jpg" alt="Mowito logo" width="60">
+            <img class="experience-logo-box" src="./assets/images/mowito_logo.jpg" alt="Mowito Robotics" width="60">
           </div>
           <h4 class="h4 experience-item-title"><b>Mowito Robotics</b></h4>
           <p class="experience-item-text">
-            Interned at Mowito Robotics where I developed an eccentricity checking machine with 97% accuracy and designed a robotic conveyor system that increased automation efficiency by 40%.
+            Developed an Eccentricity Checking Machine with <b>97% accuracy</b> using ROS2 & STM32. Designed a robotic conveyor system that increased automation efficiency by <b>40%</b>.
           </p>
         </div>
       </a>
@@ -499,11 +498,11 @@
       <a href="#">
         <div class="experience-content-box">
           <div class="experience-logo-wrapper">
-            <img class="experience-logo-box" src="./assets/images/rc-nitw.jpg" alt="Robotics Club NITW logo" width="60">
+            <img class="experience-logo-box" src="./assets/images/rc-nitw.jpg" alt="Robotics Club NITW" width="60">
           </div>
           <h4 class="h4 experience-item-title"><b>Robotics Club, NIT Warangal</b></h4>
           <p class="experience-item-text">
-            Served as the Project Incharge, leading the development of advanced robotic arms and autonomous guided vehicles, improving operational efficiency by 25%.
+            Led the development of advanced Robotic Arms and Autonomous Guided Vehicles (AGVs). Mentored junior engineers and orchestrated complex system integrations.
           </p>
         </div>
       </a>
@@ -525,6 +524,7 @@
       <article class="educationandskills" data-page="educationandskills">
 
         <header>
+          <span class="system-label">// TRAINING_LOGS</span>
           <h2 class="h2 article-title" style="font-size: 18px;">Education & Skills</h2>
         </header>
 
@@ -670,6 +670,7 @@
 
         <section class="skill">
 
+          <span class="system-label">// SYSTEM_CAPABILITIES</span>
           <h3 class="h3 skills-title">My Major Skills</h3>
 
           <ul class="skills-list content-card">
@@ -782,8 +783,9 @@
       <article class="projects" data-page="projects">
 
         <header>
-          <h2 class="h2 article-title">Projects</h2>
-        </header>
+        <span class="system-label">// PROJECT_ARCHIVE</span>
+        <h2 class="h2 article-title">Portfolio</h2>
+      </header>
 
         <section class="projects">
 
@@ -803,6 +805,10 @@
 
             <li class="filter-item">
               <button data-filter-btn>Web development Projects</button>
+            </li>
+
+            <li class="filter-item">
+              <button data-filter-btn>Mechanical Projects</button>
             </li>
 
           </ul>
@@ -837,6 +843,10 @@
                 <button data-select-item>Web development Projects</button>
               </li>
 
+              <li class="select-item">
+                <button data-select-item>Mechanical Projects</button>
+              </li>
+
             </ul>
 
           </div>
@@ -847,9 +857,9 @@
               <a href="#">
 
                 <figure class="project-img">
-                  <!-- <div class="project-item-icon-box">
+                  <div class="project-item-icon-box">
                     <ion-icon name="eye-outline"></ion-icon>
-                  </div> -->
+                  </div>
 
                   <img src="./assets/images/project-1.png" alt="Waste Management Robot" loading="lazy">
                 </figure>
@@ -857,6 +867,7 @@
                 <h3 class="project-title">Waste Management Robot</h3>
 
                 <p class="project-category">Electronics Project</p>
+                <span class="project-status">STATUS: PROTOTYPE</span>
 
               </a>
             </li>
@@ -875,6 +886,7 @@
                 <h3 class="project-title">5 - Axis Robotic Arm</h3>
 
                 <p class="project-category">Electronics Project</p>
+                <span class="project-status">STATUS: PROTOTYPE</span>
 
               </a>
             </li>
@@ -893,6 +905,7 @@
                 <h3 class="project-title">GPS-GSM Coordinate Transmission System</h3>
 
                 <p class="project-category">Electronics Project</p>
+                <span class="project-status">STATUS: COMPLETED</span>
 
               </a>
             </li>
@@ -911,6 +924,7 @@
                 <h3 class="project-title">RFID Attendance System</h3>
 
                 <p class="project-category">Electronics Project</p>
+                <span class="project-status">STATUS: COMPLETED</span>
 
               </a>
             </li>
@@ -929,6 +943,7 @@
                 <h3 class="project-title">Quadcopter</h3>
 
                 <p class="project-category">Electronics Project</p>
+                <span class="project-status">STATUS: FLIGHT_TEST</span>
 
               </a>
             </li>
@@ -947,6 +962,26 @@
                 <h3 class="project-title">CNC Machine</h3>
 
                 <p class="project-category">Electronics Project</p>
+                <span class="project-status">STATUS: OPERATIONAL</span>
+
+              </a>
+            </li>
+
+            <li class="project-item  active" data-filter-item data-category="ros2 & ml projects">
+              <a href="#">
+
+                <figure class="project-img">
+                  <div class="project-item-icon-box">
+                    <ion-icon name="eye-outline"></ion-icon>
+                  </div>
+
+                  <img src="./assets/images/blog-3.png" alt="Moon Rover (ISRO IRoC)" loading="lazy">
+                </figure>
+
+                <h3 class="project-title">Moon Rover (ISRO IRoC)</h3>
+
+                <p class="project-category">ROS2 & ML Projects</p>
+                <span class="project-status">STATUS: DEPLOYED</span>
 
               </a>
             </li>
@@ -965,6 +1000,7 @@
                 <h3 class="project-title">Robotic Arm Simulation</h3>
 
                 <p class="project-category">ROS2 & ML Projects</p>
+                <span class="project-status">STATUS: SIMULATION</span>
 
               </a>
             </li>
@@ -983,6 +1019,7 @@
                 <h3 class="project-title">AGV Simulation</h3>
 
                 <p class="project-category">ROS2 & ML Projects</p>
+                <span class="project-status">STATUS: SIMULATION</span>
 
               </a>
             </li>
@@ -1001,6 +1038,7 @@
                 <h3 class="project-title">Color Identification Algo</h3>
 
                 <p class="project-category">ROS2 & ML Projects</p>
+                <span class="project-status">STATUS: TESTED</span>
 
               </a>
             </li>
@@ -1019,6 +1057,45 @@
                 <h3 class="project-title">Face & Hand Identification</h3>
 
                 <p class="project-category">ROS2 & ML Projects</p>
+                <span class="project-status">STATUS: TESTED</span>
+
+              </a>
+            </li>
+
+            <li class="project-item  active" data-filter-item data-category="web development projects">
+              <a href="#">
+
+                <figure class="project-img">
+                  <!-- <div class="project-item-icon-box">
+                    <ion-icon name="eye-outline"></ion-icon>
+                  </div> -->
+
+                  <img src="./assets/images/project-13.png" alt="Game-Arcade Websites" loading="lazy">
+                </figure>
+
+                <h3 class="project-title">CONNECTRA</h3>
+
+                <p class="project-category">Web development Projects</p>
+                <span class="project-status">STATUS: LIVE</span>
+
+              </a>
+            </li>
+
+            <li class="project-item  active" data-filter-item data-category="web development projects">
+              <a href="#">
+
+                <figure class="project-img">
+                  <!-- <div class="project-item-icon-box">
+                    <ion-icon name="eye-outline"></ion-icon>
+                  </div> -->
+
+                  <img src="./assets/images/project-14.png" alt="Game-Arcade Websites" loading="lazy">
+                </figure>
+
+                <h3 class="project-title">Abhyas-AI</h3>
+
+                <p class="project-category">Web development Projects</p>
+                <span class="project-status">STATUS: BETA</span>
 
               </a>
             </li>
@@ -1037,29 +1114,10 @@
                 <h3 class="project-title">Game-Arcade Websites</h3>
 
                 <p class="project-category">Web development Projects</p>
+                <span class="project-status">STATUS: LIVE</span>
 
               </a>
             </li>
-
-          </li>
-
-          <li class="project-item  active" data-filter-item data-category="web development projects">
-            <a href="#">
-
-              <figure class="project-img">
-                <!-- <div class="project-item-icon-box">
-                  <ion-icon name="eye-outline"></ion-icon>
-                </div> -->
-
-                <img src="./assets/images/project-10.png" alt="Spotify Web Clone" loading="lazy">
-              </figure>
-
-              <h3 class="project-title">Spotify Web Clone</h3>
-
-              <p class="project-category">Web development Projects</p>
-
-            </a>
-          </li>
 
           </ul>
 
@@ -1078,13 +1136,13 @@
       <article class="achievements" data-page="achievements">
 
         <header>
+          <span class="system-label">// ACHIEVEMENTS_LOG</span>
           <h2 class="h2 article-title" style="font-size: 22px;">Achievements</h2>
         </header>
 
         <section class="blog-posts">
 
           <ul class="blog-posts-list">
-
             <li class="blog-post-item">
               <a href="#">
 
@@ -1099,7 +1157,7 @@
 
                     <span class="dot"></span>
 
-                    <time datetime="2022-02-23">Dec 11th, 2023</time>
+                    <time datetime="2023-12-11">Dec 11, 2023</time>
                   </div>
 
                   <h3 class="h3 blog-item-title">MJ's ACES Hack Revolution</h3>
@@ -1337,13 +1395,11 @@
   <script src="https://unpkg.com/typed.js@2.1.0/dist/typed.umd.js"></script>
   <script>
     var typed = new Typed('#element', {
-      strings: ['Namasthe! Myself Sai Sasivardhan ^1000', 'I am a Robotics Engineer ^1000'],
-      typeSpeed: 70,
+      strings: ['INITIALIZING SYSTEM... ^1000', 'USER: SAI SASIVARDHAN ^1000', 'CLASS: ROBOTICS ENGINEER ^1000', 'SPECIALTY: Robotics ^1000'],
+      typeSpeed: 50,
+      backSpeed: 30,
       fadeOut: true,
-      fadeOutClass: 'typed-fade-out',
-      fadeOutDelay: 500,
       loop: true,
-      loopCount: Infinity,
     });
   </script>
 
