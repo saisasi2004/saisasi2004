@@ -116,9 +116,9 @@
 }
 
 .typed-container {
-  height: 60px;
-  width: 75%;
+  width: calc(100% - 24px);
   max-width: 1200px;
+  padding: 14px 24px;
   background-color: #262525;
   border-radius: 20px;
   display: flex;
@@ -126,8 +126,8 @@
   align-items: center;
   text-align: center;
   margin-top: 20px;
-  margin-bottom: -25px;
-  margin-left: 10%;
+  margin-bottom: 10px;
+  margin-inline: auto;
   border: 2px #323030 solid;
 }
 .typed-cursor{
@@ -1242,10 +1242,7 @@ main {
 
 
 .typed-container {
-margin-left: 5%;
 margin-bottom: 20px;
-height: 50px; 
-width: 95%;
 }
 
 #element{
@@ -1280,10 +1277,7 @@ color: #ffffff;
 
 
 .typed-container {
-  margin-left: 16px;
   margin-bottom: 30px;
-  height: 70px; 
-  width: 95%;
 }
 
 #element{
@@ -1345,10 +1339,7 @@ color: #ffffff;
 
 
 .typed-container {
-  margin-left: 16px;
   margin-bottom: 30px;
-  height: 70px; 
-  width: 95%;
 }
 
 #element{
@@ -1654,12 +1645,6 @@ color: #ffffff;
 
 
 
-.typed-container {
-  margin-left: 5%;
-  height: 90px; 
-  width: 90%;
-}
-
 #element{
   font-size: 35px;
 }
@@ -1803,12 +1788,6 @@ color: #ffffff;
   }
 
 
-.typed-container {
-    margin-left: 5%;
-    height: 85px; 
-    width:90%;
-  }
-
 #element{
     font-size: 35px;
   }
@@ -1868,11 +1847,6 @@ color: #ffffff;
    /**
    * Typed JS
    */
-
-   .typed-container {
-    margin-left: 5%;
-    height: 120px; 
-  }
 
   #element{
     font-size: 45px;
@@ -1967,12 +1941,6 @@ color: #ffffff;
    */
 
 
-
-.typed-container {
-
-    height: 100px; 
-    width: 90%;
-  }
 
   #element{
     font-size: 50px;
@@ -2122,12 +2090,6 @@ color: #ffffff;
 
 
 
-  .typed-container {
-    /* margin-left: 18%; */
-    height: 100px; 
-    width: 90%;
-  }
-
   #element{
     font-size: 50px;
   }
@@ -2154,12 +2116,6 @@ color: #ffffff;
 }
 
 @media (min-width: 1300px) {
-  .typed-container {
-    margin-left: 10%;
-    height: 100px; 
-    width:90%;
-  }
-
   #element{
     font-size: 60px;
   }

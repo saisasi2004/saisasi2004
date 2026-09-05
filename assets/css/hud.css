@@ -1,0 +1,616 @@
+/*==================================================================
+  HUD / IMMERSION LAYER
+  Loaded after style.css + robotic-theme.css. Purely additive:
+  every rule here targets a free pseudo-element or a new .hud-* node.
+==================================================================*/
+
+:root {
+  --hud-cyan: #00f3ff;
+  --hud-blue: #0099ff;
+  --hud-amber: #ff9e00;
+  --hud-line: rgba(0, 243, 255, 0.28);
+  --hud-line-soft: rgba(0, 243, 255, 0.12);
+  --hud-glow: 0 0 18px rgba(0, 243, 255, 0.28);
+  --hud-ease: cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+/*------------------------------------------------------------------
+  1. AMBIENT - animated grid, aurora wash, scanlines, vignette
+------------------------------------------------------------------*/
+
+@keyframes hud-grid-drift {
+  from { background-position: 0 0, 0 0; }
+  to   { background-position: 30px 30px, 30px 30px; }
+}
+
+body {
+  animation: hud-grid-drift 6s linear infinite;
+}
+
+/* No filter:blur() here on purpose - the radial gradients are already soft,
+   and blurring a fixed, oversized, animated layer forces a full-surface
+   re-blur every frame (it blanked the compositor while scrolling). */
+.hud-aurora {
+  position: fixed;
+  inset: -10vmax;
+  z-index: 0;
+  pointer-events: none;
+  will-change: transform;
+  background:
+    radial-gradient(38vmax 38vmax at 18% 12%, rgba(0, 153, 255, 0.13), transparent 62%),
+    radial-gradient(32vmax 32vmax at 84% 78%, rgba(0, 243, 255, 0.10), transparent 62%),
+    radial-gradient(28vmax 28vmax at 62% 20%, rgba(255, 158, 0, 0.05), transparent 60%);
+  animation: hud-aurora-shift 24s ease-in-out infinite alternate;
+}
+
+@keyframes hud-aurora-shift {
+  from { transform: translate3d(-1.5%, -1%, 0); }
+  to   { transform: translate3d(1.5%, 1.5%, 0); }
+}
+
+.hud-scanlines {
+  position: fixed;
+  inset: 0;
+  z-index: 9998;
+  pointer-events: none;
+  background: repeating-linear-gradient(
+    to bottom,
+    rgba(0, 0, 0, 0) 0px,
+    rgba(0, 0, 0, 0) 2px,
+    rgba(0, 0, 0, 0.16) 3px,
+    rgba(0, 0, 0, 0.16) 4px
+  );
+  opacity: 0.45;
+}
+
+.hud-sweep {
+  position: fixed;
+  left: 0;
+  right: 0;
+  height: 180px;
+  z-index: 9997;
+  pointer-events: none;
+  background: linear-gradient(
+    to bottom,
+    transparent,
+    rgba(0, 243, 255, 0.05) 45%,
+    rgba(0, 243, 255, 0.09) 50%,
+    rgba(0, 243, 255, 0.05) 55%,
+    transparent
+  );
+  animation: hud-sweep-move 7s linear infinite;
+}
+
+@keyframes hud-sweep-move {
+  from { transform: translateY(-200px); }
+  to   { transform: translateY(100vh); }
+}
+
+.hud-vignette {
+  position: fixed;
+  inset: 0;
+  z-index: 9996;
+  pointer-events: none;
+  box-shadow:
+    inset 0 0 140px rgba(0, 0, 0, 0.85),
+    inset 0 0 44px rgba(0, 243, 255, 0.05);
+}
+
+/*------------------------------------------------------------------
+  2. VIEWPORT FRAME - fixed HUD corner brackets
+------------------------------------------------------------------*/
+
+.hud-frame {
+  position: fixed;
+  inset: 12px;
+  z-index: 9995;
+  pointer-events: none;
+  --l: 26px;
+  background:
+    linear-gradient(var(--hud-line), var(--hud-line)) 0 0 / var(--l) 2px no-repeat,
+    linear-gradient(var(--hud-line), var(--hud-line)) 0 0 / 2px var(--l) no-repeat,
+    linear-gradient(var(--hud-line), var(--hud-line)) 100% 0 / var(--l) 2px no-repeat,
+    linear-gradient(var(--hud-line), var(--hud-line)) 100% 0 / 2px var(--l) no-repeat,
+    linear-gradient(var(--hud-line), var(--hud-line)) 0 100% / var(--l) 2px no-repeat,
+    linear-gradient(var(--hud-line), var(--hud-line)) 0 100% / 2px var(--l) no-repeat,
+    linear-gradient(var(--hud-line), var(--hud-line)) 100% 100% / var(--l) 2px no-repeat,
+    linear-gradient(var(--hud-line), var(--hud-line)) 100% 100% / 2px var(--l) no-repeat;
+}
+
+/*------------------------------------------------------------------
+  3. TELEMETRY STRIP - live readout, desktop only
+------------------------------------------------------------------*/
+
+.hud-telemetry {
+  position: fixed;
+  top: 22px;
+  left: 26px;
+  z-index: 9994;
+  display: none;
+  gap: 18px;
+  font-family: var(--ff-fira-code);
+  font-size: 10px;
+  letter-spacing: 1px;
+  color: rgba(0, 243, 255, 0.55);
+  pointer-events: none;
+  text-transform: uppercase;
+}
+
+.hud-telemetry b {
+  color: rgba(0, 243, 255, 0.9);
+  font-weight: 500;
+}
+
+.hud-dot {
+  display: inline-block;
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: #00ff6a;
+  box-shadow: 0 0 8px #00ff6a;
+  margin-right: 6px;
+  animation: hud-blink 1.6s ease-in-out infinite;
+}
+
+@keyframes hud-blink {
+  0%, 100% { opacity: 1; }
+  50%      { opacity: 0.25; }
+}
+
+/* The strip only appears >=1250px; give it a clear band above the typed
+   banner so the two never overlap. */
+@media (min-width: 1250px) {
+  .hud-telemetry { display: flex; }
+
+  .typed-container { margin-top: 46px; }
+}
+
+/*------------------------------------------------------------------
+  4. CARD BRACKETS - corner ticks on every panel
+------------------------------------------------------------------*/
+
+.content-card::after,
+.service-item::after {
+  content: "";
+  position: absolute;
+  inset: 6px;
+  pointer-events: none;
+  --l: 12px;
+  --c: var(--hud-line-soft);
+  background:
+    linear-gradient(var(--c), var(--c)) 0 0 / var(--l) 1px no-repeat,
+    linear-gradient(var(--c), var(--c)) 0 0 / 1px var(--l) no-repeat,
+    linear-gradient(var(--c), var(--c)) 100% 0 / var(--l) 1px no-repeat,
+    linear-gradient(var(--c), var(--c)) 100% 0 / 1px var(--l) no-repeat,
+    linear-gradient(var(--c), var(--c)) 0 100% / var(--l) 1px no-repeat,
+    linear-gradient(var(--c), var(--c)) 0 100% / 1px var(--l) no-repeat,
+    linear-gradient(var(--c), var(--c)) 100% 100% / var(--l) 1px no-repeat,
+    linear-gradient(var(--c), var(--c)) 100% 100% / 1px var(--l) no-repeat;
+  transition: all 0.4s var(--hud-ease);
+}
+
+.service-item:hover::after,
+.content-card:hover::after {
+  --l: 20px;
+  --c: var(--hud-cyan);
+}
+
+.service-item,
+.content-card {
+  transition: transform 0.4s var(--hud-ease), box-shadow 0.4s var(--hud-ease);
+}
+
+.service-item:hover,
+.content-card:hover {
+  transform: translateY(-4px);
+  box-shadow: var(--shadow-2), var(--hud-glow);
+}
+
+/*------------------------------------------------------------------
+  5. PROJECT / BLOG CARDS - scan sweep + lift
+------------------------------------------------------------------*/
+
+/* both already carry overflow:hidden / position:relative in style.css;
+   restated only so the scan overlay below is guaranteed a clip context */
+.project-img { position: relative; overflow: hidden; }
+
+.project-img::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: -60%;
+  height: 45%;
+  z-index: 2;
+  pointer-events: none;
+  background: linear-gradient(
+    to bottom,
+    transparent,
+    rgba(0, 243, 255, 0.22) 48%,
+    rgba(0, 243, 255, 0.55) 50%,
+    rgba(0, 243, 255, 0.22) 52%,
+    transparent
+  );
+  opacity: 0;
+  transition: opacity 0.25s ease;
+}
+
+.project-item > a:hover .project-img::after {
+  opacity: 1;
+  animation: hud-card-scan 1.1s ease-in-out infinite;
+}
+
+@keyframes hud-card-scan {
+  from { top: -60%; }
+  to   { top: 115%; }
+}
+
+/* No `position` here: .project-status is absolute and resolves against
+   .project-img: positioning the anchor would re-anchor the chip. */
+.project-item > a,
+.blog-post-item > a {
+  transition: transform 0.4s var(--hud-ease);
+}
+
+.project-item > a:hover,
+.blog-post-item > a:hover {
+  transform: translateY(-5px);
+}
+
+.project-title,
+.blog-item-title {
+  transition: color 0.3s ease, text-shadow 0.3s ease;
+}
+
+.project-item > a:hover .project-title {
+  color: var(--hud-cyan);
+  text-shadow: 0 0 12px rgba(0, 243, 255, 0.5);
+}
+
+/* NOTE: robotic-theme.css pins this chip `position: absolute` at the card's
+   top-right and reveals it on hover - do not override `position` here. */
+.project-status {
+  padding-left: 14px;
+}
+
+.project-status::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 50%;
+  width: 5px;
+  height: 5px;
+  margin-top: -2px;
+  border-radius: 50%;
+  background: var(--hud-amber);
+  box-shadow: 0 0 6px var(--hud-amber);
+  animation: hud-blink 2.2s ease-in-out infinite;
+}
+
+/*------------------------------------------------------------------
+  6. HEADINGS - terminal caret + glitch on hover
+------------------------------------------------------------------*/
+
+.article-title {
+  position: relative;
+}
+
+.article-title::before {
+  content: "";
+  display: inline-block;
+  width: 10px;
+  height: 0.78em;
+  margin-right: 12px;
+  vertical-align: baseline;
+  background: var(--hud-cyan);
+  box-shadow: 0 0 12px rgba(0, 243, 255, 0.75);
+  animation: hud-caret 1.15s steps(1) infinite;
+}
+
+@keyframes hud-caret {
+  0%, 55%   { opacity: 1; }
+  56%, 100% { opacity: 0.12; }
+}
+
+.article-title:hover {
+  animation: glitch-text 0.32s steps(2) 2;
+}
+
+.system-label {
+  position: relative;
+  padding-left: 14px;
+}
+
+.system-label::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 2px;
+  height: 11px;
+  background: var(--hud-cyan);
+  box-shadow: 0 0 8px rgba(0, 243, 255, 0.8);
+}
+
+/*------------------------------------------------------------------
+  7. NAVBAR - bracket markers on the active tab
+  (pseudo-elements only: script.js matches on button.innerHTML)
+------------------------------------------------------------------*/
+
+.navbar-link {
+  position: relative;
+}
+
+.navbar-link::before,
+.navbar-link::after {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  color: var(--hud-cyan);
+  opacity: 0;
+  transition: opacity 0.3s ease, transform 0.3s var(--hud-ease);
+  font-family: var(--ff-fira-code);
+  pointer-events: none;
+}
+
+.navbar-link::before { content: "["; left: -8px; }
+.navbar-link::after  { content: "]"; right: -8px; }
+
+.navbar-link.active::before,
+.navbar-link.active::after {
+  opacity: 0.85;
+}
+
+.navbar-link.active::before { transform: translateY(-50%) translateX(-2px); }
+.navbar-link.active::after  { transform: translateY(-50%) translateX(2px); }
+
+.navbar-link.active {
+  text-shadow: 0 0 14px rgba(0, 243, 255, 0.55);
+}
+
+/* Below 580px .navbar-list has no `gap`, so the brackets would sit on top of
+   the neighbouring link. Drop them there - colour + glow still mark the tab. */
+@media (max-width: 579px) {
+  .navbar-link::before,
+  .navbar-link::after { content: none; }
+}
+
+/*------------------------------------------------------------------
+  8. SKILL METERS - segmented energy bars, fill on reveal
+------------------------------------------------------------------*/
+
+.skill-progress-bg {
+  position: relative;
+  overflow: hidden;
+}
+
+.skill-progress-bg::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  background: repeating-linear-gradient(
+    to right,
+    transparent 0 6px,
+    rgba(5, 5, 5, 0.85) 6px 8px
+  );
+}
+
+.skill-progress-fill {
+  position: relative;
+  background: linear-gradient(90deg, var(--hud-blue), var(--hud-cyan));
+  box-shadow: 0 0 12px rgba(0, 243, 255, 0.5);
+  transition: width 1.25s var(--hud-ease);
+}
+
+.skills-list.is-armed .skill-progress-fill { width: 0 !important; }
+
+.title-wrapper data {
+  font-family: var(--ff-fira-code);
+  color: var(--hud-cyan);
+  font-size: var(--fs-8);
+  letter-spacing: 0.5px;
+}
+
+/*------------------------------------------------------------------
+  9. REVEAL ON SCROLL
+------------------------------------------------------------------*/
+
+.hud-reveal {
+  opacity: 0;
+  transform: translateY(18px);
+  transition: opacity 0.6s var(--hud-ease), transform 0.6s var(--hud-ease);
+}
+
+.hud-reveal.is-in {
+  opacity: 1;
+  transform: none;
+}
+
+/*------------------------------------------------------------------
+  10. PAGE TRANSITION - panels boot in when a tab is opened
+------------------------------------------------------------------*/
+
+@keyframes hud-page-in {
+  0%   { opacity: 0; transform: translateY(10px); }
+  100% { opacity: 1; transform: none; }
+}
+
+article.active {
+  animation: hud-page-in 0.45s var(--hud-ease) both;
+}
+
+/*------------------------------------------------------------------
+  11. BOOT SEQUENCE
+------------------------------------------------------------------*/
+
+.hud-boot {
+  position: fixed;
+  inset: 0;
+  z-index: 10000;
+  background: #050505;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+  padding: 0 8vw;
+  font-family: var(--ff-fira-code);
+  color: var(--hud-cyan);
+  font-size: 13px;
+  line-height: 2;
+  transition: opacity 0.6s ease, visibility 0.6s ease;
+}
+
+.hud-boot.is-done {
+  opacity: 0;
+  visibility: hidden;
+}
+
+/* Failsafe: if hud.js never runs or throws, the overlay still clears itself
+   so the page can never be left covered. */
+@keyframes hud-boot-failsafe {
+  to { opacity: 0; visibility: hidden; }
+}
+
+.hud-boot {
+  animation: hud-boot-failsafe 0.4s linear 6s forwards;
+}
+
+.hud-boot-line {
+  opacity: 0;
+  white-space: pre;
+}
+
+.hud-boot-line.is-in { opacity: 1; }
+
+/* style.css resets `span { display: block }`, so opt this one back in */
+.hud-boot-line .ok {
+  display: inline;
+  color: #00ff6a;
+}
+
+.hud-boot-bar {
+  margin-top: 22px;
+  width: min(420px, 70vw);
+  height: 4px;
+  background: rgba(0, 243, 255, 0.14);
+  border-radius: 2px;
+  overflow: hidden;
+}
+
+.hud-boot-bar i {
+  display: block;
+  height: 100%;
+  width: 0;
+  background: linear-gradient(90deg, var(--hud-blue), var(--hud-cyan));
+  box-shadow: 0 0 14px rgba(0, 243, 255, 0.7);
+  transition: width 0.25s linear;
+}
+
+/*------------------------------------------------------------------
+  12. RETICLE CURSOR - desktop, fine pointers only
+------------------------------------------------------------------*/
+
+.hud-reticle {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 26px;
+  height: 26px;
+  margin: -13px 0 0 -13px;
+  z-index: 9999;
+  pointer-events: none;
+  opacity: 0;
+  transition: opacity 0.3s ease, width 0.2s ease, height 0.2s ease, margin 0.2s ease;
+}
+
+.hud-reticle::before,
+.hud-reticle::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border: 1px solid rgba(0, 243, 255, 0.55);
+  border-radius: 50%;
+}
+
+.hud-reticle::after {
+  inset: 40%;
+  border-color: var(--hud-cyan);
+  background: var(--hud-cyan);
+  box-shadow: 0 0 8px var(--hud-cyan);
+}
+
+.hud-reticle.is-hot {
+  width: 42px;
+  height: 42px;
+  margin: -21px 0 0 -21px;
+}
+
+@media (hover: hover) and (pointer: fine) and (min-width: 1024px) {
+  .hud-reticle.is-on { opacity: 1; }
+}
+
+/*------------------------------------------------------------------
+  13. TYPED BANNER - treat it like a status readout
+------------------------------------------------------------------*/
+
+.typed-container {
+  position: relative;
+  overflow: hidden;
+  border-color: rgba(0, 243, 255, 0.22) !important;
+  box-shadow: inset 0 0 40px rgba(0, 243, 255, 0.05);
+}
+
+.typed-container::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  height: 1px;
+  width: 100%;
+  background: linear-gradient(90deg, transparent, var(--hud-cyan), transparent);
+  opacity: 0.5;
+  animation: hud-rail 4s ease-in-out infinite;
+}
+
+@keyframes hud-rail {
+  0%, 100% { transform: translateX(-60%); }
+  50%      { transform: translateX(60%); }
+}
+
+/*------------------------------------------------------------------
+  14. LAYERING - keep content above the ambient wash
+------------------------------------------------------------------*/
+
+main,
+.typed-container { position: relative; z-index: 1; }
+
+/*------------------------------------------------------------------
+  15. REDUCED MOTION
+------------------------------------------------------------------*/
+
+@media (prefers-reduced-motion: reduce) {
+  body,
+  .hud-aurora,
+  .hud-sweep,
+  .hud-reticle,
+  .project-img::after,
+  .typed-container::after,
+  .article-title::before,
+  .project-status::before,
+  .hud-dot,
+  article.active {
+    animation: none !important;
+  }
+
+  .hud-sweep,
+  .hud-reticle { display: none !important; }
+
+  .hud-reveal { opacity: 1 !important; transform: none !important; }
+
+  .skill-progress-fill { transition: none !important; }
+
+  /* skip the boot screen entirely */
+  .hud-boot { display: none !important; }
+}

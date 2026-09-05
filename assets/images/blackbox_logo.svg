@@ -1,0 +1,14 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 80 80" width="80" height="80" role="img" aria-label="BlackBox Factories">
+  <circle cx="40" cy="40" r="40" fill="#f2f2f2"/>
+  <g font-family="Arial, Helvetica, sans-serif" text-anchor="middle">
+    <text x="40" y="33" font-size="15" font-weight="400" fill="#6d6e70" letter-spacing="0.5">BLACK</text>
+    <text x="34" y="49" font-size="15" font-weight="700" fill="#58595b" letter-spacing="0.5">BOX</text>
+    <text x="40" y="64" font-size="6" font-weight="400" fill="#8c8d8f" letter-spacing="2.2">FACTORIES</text>
+  </g>
+  <g transform="translate(53.5 43.5)">
+    <path d="M0 -6 L5 0 L0 6 L-2.6 6 L2.4 0 L-2.6 -6 Z" fill="#a6ce39"/>
+    <path d="M5.2 -6 L10.2 0 L5.2 6 L2.6 6 L7.6 0 L2.6 -6 Z" fill="#a6ce39"/>
+  </g>
+  <rect x="12" y="61.5" width="9" height="0.8" fill="#c9cacb"/>
+  <rect x="59" y="61.5" width="9" height="0.8" fill="#c9cacb"/>
+</svg>

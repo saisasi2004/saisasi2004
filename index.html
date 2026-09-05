@@ -17,6 +17,7 @@
   -->
   <link rel="stylesheet" href="./assets/css/style.css">
   <link rel="stylesheet" href="./assets/css/robotic-theme.css">
+  <link rel="stylesheet" href="./assets/css/hud.css">
 
   <!--
     - google font link
@@ -27,6 +28,35 @@
 </head>
 
 <body>
+
+  <!--
+    - #HUD OVERLAY LAYER
+  -->
+
+  <div class="hud-boot" data-hud-boot>
+    <div class="hud-boot-line">&gt; GSSV_OS v2.4 // cold start<span class="ok"> OK</span></div>
+    <div class="hud-boot-line">&gt; mounting /dev/portfolio<span class="ok"> OK</span></div>
+    <div class="hud-boot-line">&gt; calibrating actuators .... 6 DOF<span class="ok"> OK</span></div>
+    <div class="hud-boot-line">&gt; loading mission logs ..... 4 entries<span class="ok"> OK</span></div>
+    <div class="hud-boot-line">&gt; indexing project archive . 24 units<span class="ok"> OK</span></div>
+    <div class="hud-boot-line">&gt; operator: SAI SASIVARDHAN<span class="ok"> AUTHENTICATED</span></div>
+    <div class="hud-boot-bar"><i></i></div>
+  </div>
+
+  <div class="hud-aurora" aria-hidden="true"></div>
+  <div class="hud-sweep" aria-hidden="true"></div>
+  <div class="hud-scanlines" aria-hidden="true"></div>
+  <div class="hud-vignette" aria-hidden="true"></div>
+  <div class="hud-frame" aria-hidden="true"></div>
+  <div class="hud-reticle" data-hud-reticle aria-hidden="true"></div>
+
+  <div class="hud-telemetry" aria-hidden="true">
+    <span><i class="hud-dot"></i>SYS_ONLINE</span>
+    <span>LOC <b>17.98N 79.53E</b></span>
+    <span>TIME <b data-hud-clock>--:--:--</b></span>
+    <span>UPTIME <b data-hud-fps>00:00</b></span>
+  </div>
+
 
 
   <div class="typed-container "><span id="element"></span></div>
@@ -192,6 +222,10 @@
 
           <li class="navbar-item">
             <button class="navbar-link" data-nav-link>Achievements</button>
+          </li>
+
+          <li class="navbar-item">
+            <button class="navbar-link" data-nav-link>Explore GSSV-Labs</button>
           </li>
 
           <li class="navbar-item">
@@ -472,6 +506,19 @@
       <a href="#">
         <div class="experience-content-box">
           <div class="experience-logo-wrapper">
+            <img class="experience-logo-box" src="./assets/images/blackbox_logo.svg" alt="BlackBox Factories" width="60">
+          </div>
+          <h4 class="h4 experience-item-title"><b>BlackBox Factories</b> <span class="online-badge" title="Current role"></span></h4>
+          <p class="experience-item-text">
+            <b>Robotics Engineer &mdash; Present.</b> Working on <b>robotic arms</b> and <b>automation systems</b>, covering design, integration and deployment for industrial applications.
+          </p>
+        </div>
+      </a>
+    </li>
+    <li class="experience-item">
+      <a href="#">
+        <div class="experience-content-box">
+          <div class="experience-logo-wrapper">
             <img class="experience-logo-box" src="./assets/images/eternal_robotics_logo.jpg" alt="Eternal Robotics" width="60">
           </div>
           <h4 class="h4 experience-item-title"><b>Eternal Robotics</b></h4>
@@ -544,7 +591,7 @@
 
               <h4 class="h4 timeline-item-title">National Institute of Technology , Warangal</h4>
 
-              <span>2023 — Present</span>
+              <span>2023 — 2026</span>
 
               <p class="timeline-text">
                 B.Tech in Electronic and Communication Engineering (Minor)
@@ -556,7 +603,7 @@
 
               <h4 class="h4 timeline-item-title">National Institute of Technology , Warangal</h4>
 
-              <span>2022 — Present</span>
+              <span>2022 — 2026</span>
 
               <p class="timeline-text">
                 B.Tech in Chemical Engineering
@@ -679,11 +726,11 @@
 
               <div class="title-wrapper">
                 <h5 class="h5">Python</h5>
-                <data value="85">85% - Expert</data>
+                <data value="90">90% - Expert</data>
               </div>
 
               <div class="skill-progress-bg">
-                <div class="skill-progress-fill" style="width: 85%;"></div>
+                <div class="skill-progress-fill" style="width: 90%;"></div>
               </div>
 
             </li>
@@ -692,11 +739,11 @@
 
               <div class="title-wrapper">
                 <h5 class="h5">C++</h5>
-                <data value="60">60% - Expert</data>
+                <data value="80">80% - Expert</data>
               </div>
 
               <div class="skill-progress-bg">
-                <div class="skill-progress-fill" style="width: 60%;"></div>
+                <div class="skill-progress-fill" style="width: 80%;"></div>
               </div>
 
             </li>
@@ -718,11 +765,11 @@
 
               <div class="title-wrapper">
                 <h5 class="h5">ROS2</h5>
-                <data value="40">40% - Intermediate</data>
+                <data value="85">85% - Expert</data>
               </div>
 
               <div class="skill-progress-bg">
-                <div class="skill-progress-fill" style="width: 40%;"></div>
+                <div class="skill-progress-fill" style="width: 85%;"></div>
               </div>
 
             </li>
@@ -744,11 +791,11 @@
 
               <div class="title-wrapper">
                 <h5 class="h5">Machine Learning</h5>
-                <data value="15">15% - Beginner</data>
+                <data value="85">85% - Expert</data>
               </div>
 
               <div class="skill-progress-bg">
-                <div class="skill-progress-fill" style="width: 15%;"></div>
+                <div class="skill-progress-fill" style="width: 85%;"></div>
               </div>
 
             </li>
@@ -757,11 +804,11 @@
 
               <div class="title-wrapper">
                 <h5 class="h5">Full Stack Web Development</h5>
-                <data value="80">80% - Expert</data>
+                <data value="95">95% - Expert</data>
               </div>
 
               <div class="skill-progress-bg">
-                <div class="skill-progress-fill" style="width: 80%;"></div>
+                <div class="skill-progress-fill" style="width: 95%;"></div>
               </div>
 
             </li>
@@ -1023,45 +1070,6 @@
 
               </a>
             </li>
-
-            <li class="project-item  active" data-filter-item data-category="ros2 & ml projects">
-              <a href="#">
-
-                <figure class="project-img">
-                  <!-- <div class="project-item-icon-box">
-                    <ion-icon name="eye-outline"></ion-icon>
-                  </div> -->
-
-                  <img src="./assets/images/project-7.png" alt="Color Identification Algo" loading="lazy">
-                </figure>
-
-                <h3 class="project-title">Color Identification Algo</h3>
-
-                <p class="project-category">ROS2 & ML Projects</p>
-                <span class="project-status">STATUS: TESTED</span>
-
-              </a>
-            </li>
-
-            <li class="project-item  active" data-filter-item data-category="ros2 & ml projects">
-              <a href="#">
-
-                <figure class="project-img">
-                  <!-- <div class="project-item-icon-box">
-                    <ion-icon name="eye-outline"></ion-icon>
-                  </div> -->
-
-                  <img src="./assets/images/project-8.png" alt="Face & Hand Identification" loading="lazy">
-                </figure>
-
-                <h3 class="project-title">Face & Hand Identification</h3>
-
-                <p class="project-category">ROS2 & ML Projects</p>
-                <span class="project-status">STATUS: TESTED</span>
-
-              </a>
-            </li>
-
             <li class="project-item  active" data-filter-item data-category="web development projects">
               <a href="#">
 
@@ -1081,18 +1089,189 @@
               </a>
             </li>
 
+            <li class="project-item  active" data-filter-item data-category="ros2 & ml projects">
+              <a href="#">
+
+                <figure class="project-img">
+                  <div class="project-item-icon-box">
+                    <ion-icon name="eye-outline"></ion-icon>
+                  </div>
+
+                  <img src="./assets/images/projects/amr.png" alt="Autonomous Mobile Robot (AMR)" loading="lazy">
+                </figure>
+
+                <h3 class="project-title">Autonomous Mobile Robot (AMR)</h3>
+
+                <p class="project-category">ROS2 & ML Projects</p>
+                <span class="project-status">STATUS: OPERATIONAL</span>
+
+              </a>
+            </li>
+
+            <li class="project-item  active" data-filter-item data-category="ros2 & ml projects">
+              <a href="#">
+
+                <figure class="project-img">
+                  <div class="project-item-icon-box">
+                    <ion-icon name="eye-outline"></ion-icon>
+                  </div>
+
+                  <img src="./assets/images/projects/armgpt.png" alt="ArmGPT" loading="lazy">
+                </figure>
+
+                <h3 class="project-title">ArmGPT</h3>
+
+                <p class="project-category">ROS2 & ML Projects</p>
+                <span class="project-status">STATUS: BETA</span>
+
+              </a>
+            </li>
+
+            <li class="project-item  active" data-filter-item data-category="ros2 & ml projects">
+              <a href="#">
+
+                <figure class="project-img">
+                  <div class="project-item-icon-box">
+                    <ion-icon name="eye-outline"></ion-icon>
+                  </div>
+
+                  <img src="./assets/images/projects/neuroik.png" alt="NeuroIK" loading="lazy">
+                </figure>
+
+                <h3 class="project-title">NeuroIK</h3>
+
+                <p class="project-category">ROS2 & ML Projects</p>
+                <span class="project-status">STATUS: TESTED</span>
+
+              </a>
+            </li>
+
+            <li class="project-item  active" data-filter-item data-category="ros2 & ml projects">
+              <a href="#">
+
+                <figure class="project-img">
+                  <div class="project-item-icon-box">
+                    <ion-icon name="eye-outline"></ion-icon>
+                  </div>
+
+                  <img src="./assets/images/projects/syntheye-studio.png" alt="SynthEye Studio" loading="lazy">
+                </figure>
+
+                <h3 class="project-title">SynthEye Studio</h3>
+
+                <p class="project-category">ROS2 & ML Projects</p>
+                <span class="project-status">STATUS: BETA</span>
+
+              </a>
+            </li>
+
+            <li class="project-item  active" data-filter-item data-category="ros2 & ml projects">
+              <a href="#">
+
+                <figure class="project-img">
+                  <div class="project-item-icon-box">
+                    <ion-icon name="eye-outline"></ion-icon>
+                  </div>
+
+                  <img src="./assets/images/projects/faceattend.png" alt="FaceAttend" loading="lazy">
+                </figure>
+
+                <h3 class="project-title">FaceAttend</h3>
+
+                <p class="project-category">ROS2 & ML Projects</p>
+                <span class="project-status">STATUS: DEPLOYED</span>
+
+              </a>
+            </li>
+
+            <li class="project-item  active" data-filter-item data-category="ros2 & ml projects">
+              <a href="#">
+
+                <figure class="project-img">
+                  <div class="project-item-icon-box">
+                    <ion-icon name="eye-outline"></ion-icon>
+                  </div>
+
+                  <img src="./assets/images/projects/trinetra.png" alt="TriNetra" loading="lazy">
+                </figure>
+
+                <h3 class="project-title">TriNetra</h3>
+
+                <p class="project-category">ROS2 & ML Projects</p>
+                <span class="project-status">STATUS: PROTOTYPE</span>
+
+              </a>
+            </li>
+
+            <li class="project-item  active" data-filter-item data-category="ros2 & ml projects">
+              <a href="#">
+
+                <figure class="project-img">
+                  <div class="project-item-icon-box">
+                    <ion-icon name="eye-outline"></ion-icon>
+                  </div>
+
+                  <img src="./assets/images/projects/snklp-ai.png" alt="Snklp AI" loading="lazy">
+                </figure>
+
+                <h3 class="project-title">Snklp AI</h3>
+
+                <p class="project-category">ROS2 & ML Projects</p>
+                <span class="project-status">STATUS: BETA</span>
+
+              </a>
+            </li>
+
+            <li class="project-item  active" data-filter-item data-category="ros2 & ml projects">
+              <a href="#">
+
+                <figure class="project-img">
+                  <div class="project-item-icon-box">
+                    <ion-icon name="eye-outline"></ion-icon>
+                  </div>
+
+                  <img src="./assets/images/projects/krishnagpt.png" alt="KrishnaGPT" loading="lazy">
+                </figure>
+
+                <h3 class="project-title">KrishnaGPT</h3>
+
+                <p class="project-category">ROS2 & ML Projects</p>
+                <span class="project-status">STATUS: LIVE</span>
+
+              </a>
+            </li>
+
             <li class="project-item  active" data-filter-item data-category="web development projects">
               <a href="#">
 
                 <figure class="project-img">
-                  <!-- <div class="project-item-icon-box">
+                  <div class="project-item-icon-box">
                     <ion-icon name="eye-outline"></ion-icon>
-                  </div> -->
+                  </div>
 
-                  <img src="./assets/images/project-14.png" alt="Game-Arcade Websites" loading="lazy">
+                  <img src="./assets/images/projects/deetcode.png" alt="DeetCode" loading="lazy">
                 </figure>
 
-                <h3 class="project-title">Abhyas-AI</h3>
+                <h3 class="project-title">DeetCode</h3>
+
+                <p class="project-category">Web development Projects</p>
+                <span class="project-status">STATUS: LIVE</span>
+
+              </a>
+            </li>
+
+            <li class="project-item  active" data-filter-item data-category="web development projects">
+              <a href="#">
+
+                <figure class="project-img">
+                  <div class="project-item-icon-box">
+                    <ion-icon name="eye-outline"></ion-icon>
+                  </div>
+
+                  <img src="./assets/images/projects/kubera.png" alt="Kubera" loading="lazy">
+                </figure>
+
+                <h3 class="project-title">Kubera</h3>
 
                 <p class="project-category">Web development Projects</p>
                 <span class="project-status">STATUS: BETA</span>
@@ -1104,21 +1283,77 @@
               <a href="#">
 
                 <figure class="project-img">
-                  <!-- <div class="project-item-icon-box">
+                  <div class="project-item-icon-box">
                     <ion-icon name="eye-outline"></ion-icon>
-                  </div> -->
+                  </div>
 
-                  <img src="./assets/images/project-9.png" alt="Game-Arcade Websites" loading="lazy">
+                  <img src="./assets/images/projects/panchastra.png" alt="Panchastra" loading="lazy">
                 </figure>
 
-                <h3 class="project-title">Game-Arcade Websites</h3>
+                <h3 class="project-title">Panch&#257;stra</h3>
 
                 <p class="project-category">Web development Projects</p>
-                <span class="project-status">STATUS: LIVE</span>
+                <span class="project-status">STATUS: PROTOTYPE</span>
 
               </a>
             </li>
 
+            <li class="project-item  active" data-filter-item data-category="electronics projects">
+              <a href="#">
+
+                <figure class="project-img">
+                  <div class="project-item-icon-box">
+                    <ion-icon name="eye-outline"></ion-icon>
+                  </div>
+
+                  <img src="./assets/images/projects/e-cart-tracking.png" alt="Dynamic Live Location Tracking & Stop Request System for E-Carts" loading="lazy">
+                </figure>
+
+                <h3 class="project-title">Dynamic Live Location Tracking &amp; Stop Request System for E-Carts</h3>
+
+                <p class="project-category">Electronics Project</p>
+                <span class="project-status">STATUS: DEPLOYED</span>
+
+              </a>
+            </li>
+
+            <li class="project-item  active" data-filter-item data-category="electronics projects">
+              <a href="#">
+
+                <figure class="project-img">
+                  <div class="project-item-icon-box">
+                    <ion-icon name="eye-outline"></ion-icon>
+                  </div>
+
+                  <img src="./assets/images/projects/rc-car.png" alt="Remote Controlled Car" loading="lazy">
+                </figure>
+
+                <h3 class="project-title">Remote Controlled Car</h3>
+
+                <p class="project-category">Electronics Project</p>
+                <span class="project-status">STATUS: COMPLETED</span>
+
+              </a>
+            </li>
+
+            <li class="project-item  active" data-filter-item data-category="electronics projects">
+              <a href="#">
+
+                <figure class="project-img">
+                  <div class="project-item-icon-box">
+                    <ion-icon name="eye-outline"></ion-icon>
+                  </div>
+
+                  <img src="./assets/images/projects/burglar-alarm.png" alt="Burglar Alarm System" loading="lazy">
+                </figure>
+
+                <h3 class="project-title">Burglar Alarm System</h3>
+
+                <p class="project-category">Electronics Project</p>
+                <span class="project-status">STATUS: COMPLETED</span>
+
+              </a>
+            </li>
           </ul>
 
         </section>
@@ -1322,6 +1557,38 @@
 
 
       <!--
+        - #EXPLORE GSSV-LABS
+      -->
+
+      <article class="explore-gssv-labs" data-page="exploregssv-labs">
+
+        <header>
+          <span class="system-label">// EXTERNAL_LINK</span>
+          <h2 class="h2 article-title">Explore GSSV-Labs</h2>
+        </header>
+
+        <section class="gssv-labs">
+
+          <p class="gssv-labs-text">
+            GSSV-Labs is my dedicated workspace for robotics and software experiments &mdash;
+            build logs, deep dives and live demos of the systems featured across this portfolio.
+          </p>
+
+          <a class="gssv-labs-btn" href="https://gssv-labs.com" target="_blank" rel="noopener noreferrer">
+            <ion-icon name="open-outline"></ion-icon>
+            <span>[LAUNCH_GSSV_LABS]</span>
+          </a>
+
+          <p class="gssv-labs-note">Opens gssv-labs.com in a new tab.</p>
+
+        </section>
+
+      </article>
+
+
+
+
+      <!--
         - #CONTACT
       -->
 
@@ -1386,6 +1653,7 @@
     - custom js link
   -->
   <script src="./assets/js/script.js"></script>
+  <script src="./assets/js/hud.js"></script>
 
   <!--
     - ionicon link

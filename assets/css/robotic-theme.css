@@ -188,3 +188,59 @@ main::after {
   0% { transform: translateY(0); }
   100% { transform: translateY(-20px); }
 }
+
+/* Explore GSSV-Labs */
+.gssv-labs {
+  padding: 10px 0 20px;
+}
+
+.gssv-labs-text {
+  color: var(--light-gray);
+  font-size: var(--fs-6);
+  line-height: 1.7;
+  max-width: 640px;
+  margin-bottom: 25px;
+}
+
+.gssv-labs-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  font-family: var(--ff-fira-code);
+  font-size: var(--fs-6);
+  letter-spacing: 1px;
+  color: var(--neon-cyan);
+  background: rgba(0, 243, 255, 0.06);
+  border: 1px solid var(--neon-cyan);
+  border-radius: 10px;
+  padding: 14px 26px;
+  transition: var(--transition-1);
+}
+
+.gssv-labs-btn ion-icon {
+  font-size: 20px;
+}
+
+.gssv-labs-btn:hover,
+.gssv-labs-btn:focus-visible {
+  background: rgba(0, 243, 255, 0.16);
+  box-shadow: 0 0 18px rgba(0, 243, 255, 0.35);
+  transform: translateY(-2px);
+}
+
+.gssv-labs-note {
+  color: var(--light-gray-70);
+  font-size: var(--fs-8);
+  margin-top: 14px;
+}
+
+/* Navbar: with 6 items the absolute-positioned nav (>=1024px) grew wide enough
+   to cover the article's // SYSTEM_LABEL. Tighten spacing to reclaim the width. */
+@media (min-width: 1024px) {
+  .navbar { padding: 0 14px; }
+
+  .navbar-list {
+    gap: 18px;
+    padding: 0 12px;
+  }
+}
