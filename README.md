@@ -17,7 +17,7 @@
 
 > *"Building the future, one robot at a time"*
 
-I'm a **Robotics Engineer** pursuing my B.Tech at the prestigious **National Institute of Technology, Warangal**. With expertise spanning **Electronics**, **ROS2**, **IoT**, and **Mechanical Design**, I specialize in creating innovative robotic solutions that bridge the gap between imagination and reality.
+I'm a **Robotics Engineer** at **BlackBox Robotics**, and I have completed my B.Tech at **National Institute of Technology, Warangal**. With expertise spanning **Electronics**, **ROS2**, **IoT**, and **Mechanical Design**, I specialize in creating innovative robotic solutions that bridge the gap between imagination and reality.
 
 ```python
 class RoboticsEngineer:
@@ -25,7 +25,7 @@ class RoboticsEngineer:
         self.name = "Sai Sasivardhan Gampa"
         self.role = "Robotics Engineer"
         self.location = "Hyderabad, Telangana, India"
-        self.education = "B.tech, NIT Warangal"
+        self.education = "B.Tech (Completed), NIT Warangal"
         self.passion = ["Robotics", "Electronics", "Innovation"]
         
     def current_focus(self):
@@ -49,12 +49,12 @@ class RoboticsEngineer:
 <tr>
 <td>
 
-**🎯 Current Studies**
-- 🏛️ **NIT Warangal** (2022-Present)  
+**🎯 B.Tech Completed**
+- 🏛️ **NIT Warangal** (2022-2026)  
   B.Tech in Chemical Engineering  
   📊 **CGPA:** 7.58
   
-- 🔌 **NIT Warangal** (2023-Present)  
+- 🔌 **NIT Warangal** (2023-2026)  
   B.Tech in Electronics & Communication (Minor)  
   📊 **CGPA:** 9.25
 
@@ -78,7 +78,7 @@ class RoboticsEngineer:
 
 ## 💼 Professional Experience
 
-### 🏭 **BlackBox Factories** | *Robotics Engineer* 🟢
+### 🏭 **BlackBox Robotics** | *Robotics Engineer* 🟢
 **📅 Present**
 - 🦾 Working on **robotic arms** and **automation systems**
 - 🔧 Design, integration and deployment for **industrial applications**
