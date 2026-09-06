@@ -78,6 +78,11 @@ class RoboticsEngineer:
 
 ## 💼 Professional Experience
 
+### 🏭 **BlackBox Factories** | *Robotics Engineer* 🟢
+**📅 Present**
+- 🦾 Working on **robotic arms** and **automation systems**
+- 🔧 Design, integration and deployment for **industrial applications**
+
 ### 🏢 **Eternal Robotics** | *Intern*
 **📅 Jun 2023 - Jul 2023 | 📍 Hyderabad, India**
 - 🎯 Built automated **OCR pipeline** achieving **95% accuracy**
@@ -132,13 +137,13 @@ class RoboticsEngineer:
 
 | Skill | Proficiency |
 |-------|-------------|
-| **Python** | Expert (85%) |
+| **Full Stack Web Development** | Expert (95%) |
+| **Python** | Expert (90%) |
 | **Embedded C** | Expert (90%) |
-| **Web Development** | Expert (80%) |
-| **C++** | Proficient (60%) |
-| **ROS2** | Intermediate (40%) |
+| **ROS2** | Expert (85%) |
+| **Machine Learning** | Expert (85%) |
+| **C++** | Expert (80%) |
 | **Mechanical Design** | Beginner (30%) |
-| **Machine Learning** | Beginner (15%) |
 
 </div>
 
@@ -161,86 +166,94 @@ class RoboticsEngineer:
 
 ## 🚀 Featured Projects
 
+> **26 projects** across electronics, robotics/ML and software. Live at the portfolio site.
+
 <div align="left">
 
-### 🔌 Electronics Projects
+### 🔌 Electronics Projects *(11)*
 
-#### 🗑️ **Waste Management Robot**
+#### 🗑️ **Waste Management Robot** — `Prototype`
 *Intelligent waste segregation system*
 - 🎯 **85%** waste identification accuracy
 - 🦾 **3-axis robotic arm** for sorting
 - 📦 **15kg** holding capacity
 
-#### 🤖 **5-Axis Robotic Arm**
+#### ♻️ **Smart Dustbin Management System** — `Operational`
+
+#### 🤖 **5-Axis Robotic Arm** — `Prototype`
 *Precision robotic manipulation system*
 - 🎯 **95%** precision in segregation
 - 👁️ **OpenCV** color recognition (90% accuracy)
 - ⚙️ **Inverse kinematics** for precise placement
 
-#### 📍 **Dynamic GPS Tracking System**
+#### 📍 **GPS-GSM Coordinate Transmission System** — `Completed`
 - Real-time location tracking with **30%** faster response
 - **ESP8266** and **Firebase** integration
 - **99%** data accuracy achievement
 
-#### 🚁 **Quadcopter**
-- Custom built flight controller and frame
-- Stable flight dynamics and control
-- **Status:** Flight Test
-
-#### ⚙️ **CNC Machine**
-- Precision automated machining tool
-- G-code interpretation and execution
-- **Status:** Operational
-
-#### 📋 **RFID Attendance System**
+#### 📋 **RFID Attendance System** — `Completed`
 - **25%** improvement in tracking accuracy
 - **Google Sheets** integration
 - **95%** reduction in manual errors
 
-### 🤖 ROS2 & ML Projects
+#### 🚁 **Quadcopter** — `Flight Test`
+- Custom built flight controller and frame
+- Stable flight dynamics and control
 
-#### 🌙 **Moon Rover - ISRO IRoC-U**
+#### ⚙️ **CNC Machine** — `Operational`
+- Precision automated machining tool
+- G-code interpretation and execution
+
+#### 🚌 **Dynamic Live Location Tracking & Stop Request System for E-Carts** — `Deployed`
+
+#### ✈️ **Remote Controlled Plane** — `Flight Test`
+
+#### 🚨 **Burglar Alarm System** — `Completed`
+
+#### ⚡ **VidyutMitra** — `Deployed`
+
+### 🤖 ROS2 & ML Projects *(9)*
+
+#### 🌙 **Moon Rover - ISRO IRoC-U** — `Deployed`
 *Advanced autonomous rover with V-SLAM navigation*
 - 🎯 **40%** improvement in operational efficiency
 - 📷 **Intel RealSense** depth camera integration
 - 🧠 **V-SLAM & PID** algorithms implementation
 
-#### � **Robotic Arm Simulation**
+#### 🦾 **Robotic Arm Simulation** — `Simulation`
 - ROS2 based simulation environment
 - Kinematics validation and path planning
-- **Status:** Simulation
 
-#### � **AGV Simulation**
+#### 🚗 **AGV Simulation** — `Simulation`
 - Autonomous Guided Vehicle simulation
 - Navigation stack implementation
-- **Status:** Simulation
 
-#### 🎨 **Color Identification Algo**
-- Real-time color detection and segmentation
-- Optimized for embedded systems
-- **Status:** Tested
+#### 🛻 **Autonomous Mobile Robot (AMR)** — `Operational`
 
-#### � **Face & Hand Identification**
-- Biometric detection system
-- Gesture recognition capabilities
-- **Status:** Tested
+#### 🦿 **ArmGPT** — `Beta`
 
-### 🌐 Web Development Projects
+#### 🧠 **NeuroIK** — `Tested`
 
-#### 🔗 **CONNECTRA**
-- Game-Arcade Website platform
+#### 👁️ **SynthEye Studio** — `Beta`
+
+#### 🪪 **FaceAttend** — `Deployed`
+
+#### 🪈 **KrishnaGPT** — `Live`
+
+### 🌐 Web / Desktop / App Development *(6)*
+
+#### 🔗 **CONNECTRA** — `Live`
 - Interactive user interface
-- **Status:** Live
 
-#### � **Abhyas-AI**
-- Educational AI platform
-- Personalized learning experience
-- **Status:** Beta
+#### 🐍 **Snklp AI** — `Beta`
 
-#### 🎮 **Game-Arcade Websites**
-- Collection of browser-based games
-- Responsive design and high performance
-- **Status:** Live
+#### 🔺 **TriNetra** — `Prototype`
+
+#### 💻 **DeetCode** — `Live`
+
+#### 💰 **Kubera** — `Beta`
+
+#### 🗡️ **Panchāstra** — `Prototype`
 
 </div>
 
@@ -252,10 +265,11 @@ class RoboticsEngineer:
 
 | 🥇 Achievement | 📅 Date | 🏢 Organization |
 |----------------|---------|-----------------|
-| 🥇 **1st Prize** - Hitachi's Innothon | Feb 2025 | NITW & Hitachi |
+| 📜 **Patent Granted** - EV GPS Locator | Apr 2026 | Patent Office |
+| 🏅 **Best Innovator Award** - Innothon 3.O | Mar 2026 | NITW & Hitachi |
+| 🥇 **1st Prize** - Innothon 2.O | Feb 2025 | NITW & Hitachi |
 | 🥇 **Best Innovator & Innovation** | Jan 2025 | Innovation Garage |
-| 📋 **Patent Filed** - EV GPS Locator | Dec 2024 | Patent Office |
-| 🏆 **Top 150 Teams** - ISRO IRoC | Jan 2024 | ISRO IRoC Rover|
+| 🏆 **Top 150 Teams** - ISRO IRoC | Jan 2024 | ISRO IRoC Rover |
 | 🥇 **1st Prize** - ECE Hackathon | Nov 2023 | NIT Warangal |
 | 🥉 **4th Prize** - MJ's ACES Hack | Dec 2023 | MJ College |
 
@@ -330,7 +344,7 @@ mindmap
 
     Innovation
       Patent Development
-        EV GPS Locator Patent Filed
+        EV GPS Locator Patent Granted
       Research Projects
         Millet Cooking Robot Teckybot
         Smart Waste Management System
